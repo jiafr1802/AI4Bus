@@ -1,0 +1,10 @@
+product_id,name_zh,category,evidence_date,source_ids,evidence_note,demand_score,trend_score,competition_score,logistics_score,content_fit_score,evidence_confidence,compliance_risk,ip_risk,supplier_cost_cny,freight_cny,retail_price_sgd,cny_per_sgd,platform_fee_rate,ad_cost_rate,return_loss_rate
+cable-sleeve,通用桌面线缆整理套装,电脑配件,2026-09-06,amazon-sg;lazada-sg;made-in-china;global-sources,"Amazon SG约189个结果；Lazada约16313个广义结果，前20中位价S$3.27、中位销量438，需求明确但低价竞争极强；3个公开供应挂牌价已采集，仍需Shopee样本和正式询价",88,55,24,92,82,86,1,1,22,10,22.90,5.5,0.12,0.15,0.04
+desktop-organizer,折叠桌面文件与设备收纳架,办公收纳,2026-09-06,amazon-sg,"Amazon SG电脑类榜单出现桌面支架；以通用无品牌结构测试",72,48,62,78,70,65,1,1,24,14,24.90,5.5,0.12,0.15,0.04
+generic-bag-charm,可替换挂件的通用包饰,时尚配件,2026-09-06,user-screenshots;tiktok-cc,"截图显示包挂趋势；只做原创或公版造型并验证新加坡信号",62,88,42,94,92,48,1,2,18,8,19.90,5.5,0.12,0.18,0.05
+handheld-fan,可折叠手持风扇,小家电,2026-09-06,user-screenshots;google-trends,"截图提供海外热度个案；新加坡高温适配但锂电运输需专线报价",76,72,40,48,88,50,3,1,35,20,29.90,5.5,0.14,0.18,0.06
+vacuum-pet-tool,通用吸尘器宠物毛发刷头,家居清洁,2026-09-06,user-screenshots;amazon-sg,"截图中出现吸尘器配件；需解决接口兼容和退货风险",68,58,52,70,84,45,1,2,42,24,34.90,5.5,0.12,0.16,0.09
+moisture-absorber,可重复使用衣柜防潮盒,家居收纳,2026-09-06,data-gov-sg;amazon-sg,"新加坡湿热场景假设强；尚缺平台榜单和关键词趋势直接证据",70,42,55,58,72,42,2,1,20,28,24.90,5.5,0.12,0.15,0.05
+travel-notebook-kit,旅行手账收纳补充套装,办公用品,2026-09-06,amazon-sg,"Amazon SG办公用品榜单出现旅行笔记本；套装需求需另行验证",66,52,54,88,76,58,1,1,30,15,29.90,5.5,0.12,0.15,0.04
+health-supplement,跨境保健补充剂,健康,2026-09-06,amazon-sg;hsa,"Amazon SG健康类榜单信号强但安全质量标签和广告责任高",90,65,35,75,45,75,5,1,55,20,39.90,5.5,0.14,0.18,0.06
+licensed-character-toy,热门IP角色毛绒挂件,潮玩,2026-09-06,user-screenshots,"截图显示强趋势；无授权供应链不可进入测试",85,95,30,85,95,52,2,5,35,16,34.90,5.5,0.14,0.20,0.06

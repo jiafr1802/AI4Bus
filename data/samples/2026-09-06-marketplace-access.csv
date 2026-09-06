@@ -1,0 +1,6 @@
+sampled_at,marketplace,market,keyword,status,result_count,notes,url
+2026-09-06T16:14:00+08:00,Amazon,SG,cable management,accessible,189,"Anonymous results visible in SGD; page delivery location showed United States, so shipping/availability need SG address recheck",https://www.amazon.sg/s?k=cable+management
+2026-09-06T16:14:00+08:00,Shopee,SG,cable management,login_required,,"Redirected to traffic verification page stating Login Required; no result absence inferred",https://shopee.sg/search?keyword=cable%20management
+2026-09-06T16:50:00+08:00,Lazada,SG,cable management,accessible,16313,"Anonymous Best Match results became visible on a later compliant browser attempt; first 20 captured without bypassing verification",https://www.lazada.sg/tag/cable-management/?q=cable%20management&catalog_redirect_tag=true
+2026-09-06T16:14:00+08:00,Alibaba,global,cable management kit,captcha,,"Slider verification blocked listing search; alternative public directories used",https://www.alibaba.com/trade/search?SearchText=cable+management+kit
+2026-09-06T16:14:00+08:00,1688,CN,线缆整理套装,login_required,,"Redirected to sign-in; no automated access attempted",https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%BA%BF%E7%BC%86%E6%95%B4%E7%90%86%E5%A5%97%E8%A3%85

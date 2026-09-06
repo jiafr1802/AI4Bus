@@ -1,0 +1,10 @@
+﻿rank,product_id,name_zh,score,decision,unit_profit_sgd,contribution_margin,evidence_confidence,evidence_date,source_ids,reason
+1,cable-sleeve,通用桌面线缆整理套装,65.42,WATCH,8.09,38.5%,86.0,2026-09-06,amazon-sg;lazada-sg;made-in-china;global-sources,补充证据后复评
+2,desktop-organizer,折叠桌面文件与设备收纳架,54.96,DROP,8.22,36.0%,65.0,2026-09-06,amazon-sg,当前综合分不足
+3,travel-notebook-kit,旅行手账收纳补充套装,54.01,DROP,9.98,36.4%,58.0,2026-09-06,amazon-sg,当前综合分不足
+4,generic-bag-charm,可替换挂件的通用包饰,50.4,DROP,6.56,36.0%,48.0,2026-09-06,user-screenshots;tiktok-cc,当前综合分不足
+5,moisture-absorber,可重复使用衣柜防潮盒,37.23,DROP,6.15,26.9%,42.0,2026-09-06,data-gov-sg;amazon-sg,当前综合分不足
+6,vacuum-pet-tool,通用吸尘器宠物毛发刷头,37.16,DROP,7.11,22.2%,45.0,2026-09-06,user-screenshots;amazon-sg,当前综合分不足
+7,handheld-fan,可折叠手持风扇,36.08,DROP,6.07,22.1%,50.0,2026-09-06,user-screenshots;google-trends,当前综合分不足
+8,health-supplement,跨境保健补充剂,33.97,BLOCK,7.81,21.3%,75.0,2026-09-06,amazon-sg;hsa,合规或知识产权风险达到硬门槛
+9,licensed-character-toy,热门IP角色毛绒挂件,28.68,BLOCK,8.79,27.4%,52.0,2026-09-06,user-screenshots,合规或知识产权风险达到硬门槛

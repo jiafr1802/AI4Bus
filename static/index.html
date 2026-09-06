@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="中国供应链到新加坡选品研究管理控制台">
+  <meta name="app-mode" content="api">
+  <title>SG Product Research</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">SG</span>
+        <div><strong>Product Research</strong><small>Singapore desk</small></div>
+      </div>
+      <nav aria-label="主导航">
+        <a class="nav-item active" href="#overview"><i data-lucide="layout-dashboard"></i><span>研究总览</span></a>
+        <a class="nav-item" href="#candidates"><i data-lucide="list-filter"></i><span>候选管理</span></a>
+        <a class="nav-item" href="#evidence"><i data-lucide="database"></i><span>证据状态</span></a>
+      </nav>
+      <div class="sidebar-note">
+        <span class="status-dot"></span>
+        <div><strong id="runtime-label">仅本机访问</strong><small id="runtime-detail">数据保存在本地 CSV</small></div>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar" id="overview">
+        <div>
+          <p class="eyebrow">CHINA → SINGAPORE</p>
+          <h1>选品控制台</h1>
+          <p class="subtitle">公开证据、单位经济与风险门槛的统一工作台</p>
+        </div>
+        <button class="button secondary" id="recalculate" type="button">
+          <i data-lucide="refresh-cw"></i><span>重新计算</span>
+        </button>
+      </header>
+
+      <section class="metrics" aria-label="研究概况">
+        <article class="metric accent-coral">
+          <span class="metric-label">当前首选</span>
+          <strong id="top-candidate">--</strong>
+          <span id="top-decision" class="decision">--</span>
+        </article>
+        <article class="metric accent-teal">
+          <span class="metric-label">最高综合分</span>
+          <strong id="top-score">--</strong>
+          <small>满分 100</small>
+        </article>
+        <article class="metric accent-yellow">
+          <span class="metric-label">Lazada 中位价</span>
+          <strong id="median-price">--</strong>
+          <small id="sample-size">--</small>
+        </article>
+        <article class="metric accent-ink">
+          <span class="metric-label">Lazada 中位销量</span>
+          <strong id="median-sold">--</strong>
+          <small>链接累计销量</small>
+        </article>
+      </section>
+
+      <section class="panel" id="candidates">
+        <div class="section-heading">
+          <div><p class="eyebrow">DECISION QUEUE</p><h2>候选管理</h2></div>
+          <div class="legend"><span><b class="dot test"></b>TEST</span><span><b class="dot watch"></b>WATCH</span><span><b class="dot block"></b>BLOCK / DROP</span></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>排名</th><th>候选</th><th>决策</th><th>得分</th><th>单件利润</th><th>贡献毛利</th><th>证据</th><th><span class="sr-only">操作</span></th></tr></thead>
+            <tbody id="candidate-rows"><tr><td colspan="8" class="loading">正在读取研究数据…</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="evidence-grid" id="evidence">
+        <article class="panel evidence-summary">
+          <div class="section-heading compact"><div><p class="eyebrow">MARKET SIGNAL</p><h2>Lazada 快照</h2></div><i data-lucide="chart-no-axes-combined"></i></div>
+          <div class="signal-number"><strong id="max-sold">--</strong><span>样本最高累计销量</span></div>
+          <p>Best Match 前 20 用于验证需求与价格密度，不代表单一 SKU 的周期销量。</p>
+        </article>
+        <article class="panel access-panel">
+          <div class="section-heading compact"><div><p class="eyebrow">SOURCE HEALTH</p><h2>数据源访问</h2></div></div>
+          <div id="access-list" class="access-list"></div>
+        </article>
+      </section>
+
+      <footer><span id="updated-at">等待同步</span><span>采购前仍需正式报价与合规复核</span></footer>
+    </main>
+  </div>
+
+  <dialog id="candidate-dialog">
+    <form id="candidate-form">
+      <div class="dialog-header">
+        <div><p class="eyebrow">EDIT ASSUMPTIONS</p><h2 id="dialog-title">编辑候选</h2><p id="dialog-id" class="muted"></p></div>
+        <button class="icon-button" id="close-dialog" type="button" aria-label="关闭"><i data-lucide="x"></i></button>
+      </div>
+      <div class="form-section">
+        <h3>市场评分</h3>
+        <div class="form-grid" id="score-fields"></div>
+      </div>
+      <div class="form-section">
+        <h3>风险与单位经济</h3>
+        <div class="form-grid" id="economics-fields"></div>
+      </div>
+      <label class="wide-field"><span>证据备注</span><textarea name="evidence_note" rows="4"></textarea></label>
+      <p class="form-error" id="form-error" role="alert"></p>
+      <div class="dialog-actions">
+        <button class="button secondary" id="cancel-dialog" type="button">取消</button>
+        <button class="button primary" type="submit"><i data-lucide="save"></i><span>保存并重算</span></button>
+      </div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
