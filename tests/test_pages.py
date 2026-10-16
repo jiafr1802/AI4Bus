@@ -32,6 +32,16 @@ class PagesBuildTests(unittest.TestCase):
         self.assertIn('href="./styles.css"', html)
         self.assertIn('name="app-mode" content="static"', html)
         self.assertIn('request("./dashboard-data.json")', javascript)
+        self.assertIn('id="research-candidate"', html)
+        self.assertIn('id="guide-method"', html)
+        self.assertIn('id="guide-workflow"', html)
+        self.assertIn("GitHub Pages 是发布时的数据快照", html)
+        self.assertIn("费用预估不是账单硬限额", html)
+        self.assertGreaterEqual(len(payload["evidence"]), 40)
+        self.assertIn("research", payload["candidates"][0])
+        self.assertEqual(payload["lazada_summary"]["sampled_at"], "2026-09-06")
+        self.assertNotIn("jobs", payload)
+        self.assertNotIn("monid", payload)
         self.assertTrue((SITE / ".nojekyll").exists())
 
 

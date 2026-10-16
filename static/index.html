@@ -15,12 +15,14 @@
     <aside class="sidebar">
       <div class="brand">
         <span class="brand-mark">SG</span>
-        <div><strong>Product Research</strong><small>Singapore desk</small></div>
+        <div><strong>选品研究台</strong><small>Singapore / Research</small></div>
       </div>
       <nav aria-label="主导航">
-        <a class="nav-item active" href="#overview"><i data-lucide="layout-dashboard"></i><span>研究总览</span></a>
-        <a class="nav-item" href="#candidates"><i data-lucide="list-filter"></i><span>候选管理</span></a>
-        <a class="nav-item" href="#evidence"><i data-lucide="database"></i><span>证据状态</span></a>
+        <a class="nav-item active" href="#overview" aria-label="研究总览" title="研究总览"><i data-lucide="layout-dashboard"></i><span>研究总览</span></a>
+        <a class="nav-item" href="#guide" aria-label="逻辑与用法" title="逻辑与用法"><i data-lucide="book-open"></i><span>逻辑与用法</span></a>
+        <a class="nav-item" href="#candidates" aria-label="候选管理" title="候选管理"><i data-lucide="list-filter"></i><span>候选管理</span></a>
+        <a class="nav-item" href="#evidence" aria-label="证据状态" title="证据状态"><i data-lucide="database"></i><span>证据状态</span></a>
+        <a class="nav-item" href="#collection" aria-label="数据采集" title="数据采集"><i data-lucide="workflow"></i><span>数据采集</span></a>
       </nav>
       <div class="sidebar-note">
         <span class="status-dot"></span>
@@ -31,33 +33,71 @@
     <main>
       <header class="topbar" id="overview">
         <div>
-          <p class="eyebrow">CHINA → SINGAPORE</p>
-          <h1>选品控制台</h1>
-          <p class="subtitle">公开证据、单位经济与风险门槛的统一工作台</p>
+          <p class="eyebrow">SINGAPORE MARKET</p>
+          <h1>选品研究</h1>
+          <p class="subtitle" id="overview-summary">正在核对候选与样本</p>
         </div>
         <button class="button secondary" id="recalculate" type="button">
           <i data-lucide="refresh-cw"></i><span>重新计算</span>
         </button>
       </header>
 
+      <section class="home-guide" id="guide" aria-labelledby="guide-title">
+        <div class="guide-intro">
+          <i data-lucide="book-open-check"></i>
+          <div><h2 id="guide-title">先验证需求与利润，再决定小批量测试</h2><p>目标市场：新加坡。以商品、评论、内容和报价交叉核对方向，参考分不是销量预测，也不代表采购许可。</p></div>
+        </div>
+        <div class="guide-sections">
+          <details id="guide-method">
+            <summary><span>底层逻辑</span><span class="guide-summary-note">证据 → 利润 → 风险 → 决策</span></summary>
+            <div class="guide-body">
+              <ol class="guide-steps">
+                <li><strong>保留来源，不把热度当成交</strong><p>商品与评论验证需求，社媒补充使用场景，正式报价校验成本。每条证据保留平台、地区、日期和原文；公开挂牌不能代替供应商正式报价。</p></li>
+                <li><strong>先算单件利润，再看综合分</strong><p>假设单件利润 = 售价 ÷ 1.09 −（采购成本 + 运费）÷ 汇率 − 售价 ×（平台费率 + 广告费率 + 退货损失率）。9% 是压力测试预留，实际税务须另行确认。</p><p>基础分权重：需求 25%、贡献毛利 25%、趋势 15%、物流 15%、竞争吸引力 10%、内容适配 10%，再按人工置信度和风险调整。这些输入仍是待核实假设，不会因为导入数据自动变成事实。</p></li>
+                <li><strong>证据过期与风险门槛优先</strong><p>研究门槛：30 天内至少 3 条新加坡商品、5 条新加坡评论、2 条社媒内容、1 份正式报价，并覆盖至少两个需求平台。海外商品、过期或排除记录不计入本地近期需求；商品评价总数不等于评论样本数。</p></li>
+              </ol>
+              <dl class="guide-decisions">
+                <div><dt><span class="pill TEST">TEST</span></dt><dd>参考分 ≥ 70 且证据齐备，进入小批量测试评估，仍须样品、同规格三家报价与合规复核。</dd></div>
+                <div><dt><span class="pill WATCH">WATCH</span></dt><dd>参考分 55–69.99，或高分但缺少近期交叉证据，先补最薄弱的环节。</dd></div>
+                <div><dt><span class="pill DROP">DROP</span></dt><dd>参考分低于 55，暂缓投入。</dd></div>
+                <div><dt><span class="pill BLOCK">BLOCK</span></dt><dd>合规或 IP 风险 ≥ 4，或保守贡献毛利低于 20%。高热度不能抵消风险。</dd></div>
+              </dl>
+              <p class="guide-caveat">“已收录”包含历史资料；“近期可用”只统计通过时效、地区和排除检查的记录。“未采集”与“未记录”都不等于数值 0。证据覆盖只是研究准入，不是成功概率。</p>
+            </div>
+          </details>
+          <details id="guide-workflow">
+            <summary><span>使用流程</span><span class="guide-summary-note">从候选对比到证据复核</span></summary>
+            <div class="guide-body">
+              <ol class="guide-steps">
+                <li><strong>选一个候选方向</strong><p>先比较参考分、假设利润和风险，再确认“待验证”或“风险阻断”的原因，避免只追最高分。</p><a href="#candidates">查看候选对比<i data-lucide="arrow-right"></i></a></li>
+                <li><strong>核对原始样本</strong><p>按候选、平台和日期检查商品价格、评价数与来源，区分历史样本和近期信号。优先补齐评论、市场地区或正式报价的缺口。</p><a href="#evidence">查看市场样本<i data-lucide="arrow-right"></i></a></li>
+                <li><strong>补证据，再调整假设</strong><p>本地后台可导入 JSON/CSV，排除无关记录，并人工更新评分与成本。Monid 采集须先配置密钥、检查接口和报价、批准本次调用，再核对返回结果并导入。</p><a class="local-only" href="#collection">进入本地采集<i data-lucide="arrow-right"></i></a></li>
+                <li><strong>小样验证，而非直接放量</strong><p>证据、利润和风险全部通过后，再评估 20–50 件测试。复核样品、供应商规格、运输和权利链；持续记录退款率、广告后毛利与售罄周期。</p></li>
+              </ol>
+              <div class="guide-boundary"><strong>公开网页与本地后台</strong><p>GitHub Pages 是发布时的数据快照，只提供浏览、筛选和比较；它不会实时抓取，也不能保存修改。本地后台负责编辑、导入与付费采集。更新数据后需重新提交和发布，公开网页才会刷新。</p><p>密钥与私有采集任务不随 Pages 发布；已导入的证据原文会进入公开快照，发布前须去除个人信息和保密报价。费用预估不是账单硬限额，真正的预算限制应在 Monid 工作区设置。</p></div>
+            </div>
+          </details>
+        </div>
+      </section>
+
       <section class="metrics" aria-label="研究概况">
         <article class="metric accent-coral">
-          <span class="metric-label">当前首选</span>
+          <span class="metric-label">优先研究</span>
           <strong id="top-candidate">--</strong>
           <span id="top-decision" class="decision">--</span>
         </article>
         <article class="metric accent-teal">
           <span class="metric-label">最高综合分</span>
           <strong id="top-score">--</strong>
-          <small>满分 100</small>
+          <small>人工假设模型 / 满分 100</small>
         </article>
         <article class="metric accent-yellow">
-          <span class="metric-label">Lazada 中位价</span>
+          <span class="metric-label">Lazada 历史中位价</span>
           <strong id="median-price">--</strong>
           <small id="sample-size">--</small>
         </article>
         <article class="metric accent-ink">
-          <span class="metric-label">Lazada 中位销量</span>
+          <span class="metric-label">Lazada 历史中位已售数</span>
           <strong id="median-sold">--</strong>
           <small>链接累计销量</small>
         </article>
@@ -65,18 +105,104 @@
 
       <section class="panel" id="candidates">
         <div class="section-heading">
-          <div><p class="eyebrow">DECISION QUEUE</p><h2>候选管理</h2></div>
-          <div class="legend"><span><b class="dot test"></b>TEST</span><span><b class="dot watch"></b>WATCH</span><span><b class="dot block"></b>BLOCK / DROP</span></div>
+          <div><p class="eyebrow">SHORTLIST</p><h2>候选对比</h2></div>
+          <div class="legend"><span><b class="dot test"></b>可评估试单</span><span><b class="dot watch"></b>待验证</span><span><b class="dot block"></b>暂缓 / 阻断</span></div>
         </div>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>排名</th><th>候选</th><th>决策</th><th>得分</th><th>单件利润</th><th>贡献毛利</th><th>证据</th><th><span class="sr-only">操作</span></th></tr></thead>
+            <thead><tr><th>排名</th><th>候选</th><th>研究建议</th><th>参考分</th><th>假设单件利润</th><th>假设贡献毛利</th><th>已收录 / 近期可用</th><th><span class="sr-only">操作</span></th></tr></thead>
             <tbody id="candidate-rows"><tr><td colspan="8" class="loading">正在读取研究数据…</td></tr></tbody>
           </table>
         </div>
       </section>
 
-      <section class="evidence-grid" id="evidence">
+      <section class="research-section" id="evidence">
+        <div class="section-heading">
+          <div><p class="eyebrow">MARKET EVIDENCE</p><h2>市场样本</h2></div>
+          <button class="button secondary local-only" id="open-import" type="button"><i data-lucide="upload"></i><span>导入证据</span></button>
+        </div>
+        <div class="research-toolbar">
+          <label><span>研究候选</span><select id="research-candidate"></select></label>
+          <label><span>证据类型</span><select id="evidence-kind"><option value="">全部</option><option value="listing">商品</option><option value="review">评论</option><option value="social">社媒</option><option value="supplier">报价</option></select></label>
+          <label><span>来源平台</span><select id="evidence-platform"><option value="">全部平台</option></select></label>
+          <label><span>搜索原文 / 标签</span><input id="evidence-search" type="search"></label>
+        </div>
+        <div class="data-notice" id="data-notice" role="status">
+          <i data-lucide="archive"></i>
+          <div><strong id="inventory-title"></strong><p id="inventory-detail"></p></div>
+          <span class="notice-badge" id="inventory-status"></span>
+        </div>
+        <div id="research-counts" class="research-counts"></div>
+        <div id="platform-comparison" class="platform-comparison"></div>
+        <div id="research-verdict" class="research-verdict" role="status"></div>
+        <details class="research-audit">
+          <summary>近期证据缺口与评论信号</summary>
+          <div class="research-columns">
+            <div><h3>待补证据</h3><ul id="research-gaps" class="research-gaps"></ul></div>
+            <div><h3>评论信号</h3><div id="research-themes" class="themes"></div><p id="research-freshness" class="muted"></p></div>
+          </div>
+        </details>
+        <div class="record-toolbar">
+          <strong id="evidence-match-count"></strong>
+          <label><span class="sr-only">数据状态</span><select id="evidence-status"><option value="all">全部状态</option><option value="recent">近 30 天</option><option value="historical">历史样本</option><option value="excluded">已排除</option></select></label>
+          <label><span class="sr-only">样本排序</span><select id="evidence-sort"><option value="date">最新采样优先</option><option value="price-asc">价格从低到高</option><option value="price-desc">价格从高到低</option></select></label>
+        </div>
+        <div id="evidence-records" class="evidence-records"></div>
+        <div id="evidence-pagination" class="record-pagination" hidden>
+          <span id="evidence-page-status" role="status"></span>
+          <button id="evidence-previous" class="icon-button" type="button" title="上一页样本" aria-label="上一页样本"><i data-lucide="chevron-left"></i></button>
+          <button id="evidence-next" class="icon-button" type="button" title="下一页样本" aria-label="下一页样本"><i data-lucide="chevron-right"></i></button>
+        </div>
+      </section>
+
+      <section class="research-section local-only" id="collection">
+        <div class="section-heading"><div><p class="eyebrow">MONID / DATA PIPELINE</p><h2>数据采集</h2></div><span id="monid-status" class="muted">检查连接配置</span></div>
+        <div id="monid-connection" class="connection-notice" hidden>
+          <i data-lucide="unplug"></i><div><strong>Monid 尚未连接</strong><p>尚无新的 API 采集数据；当前商品来自本地历史快照。</p></div>
+          <a href="https://app.monid.ai/access/api-keys" target="_blank" rel="noopener noreferrer">管理 Monid 密钥<i data-lucide="external-link"></i></a>
+        </div>
+        <form id="discover-form" class="research-toolbar">
+          <label><span>数据源任务</span><select id="source-task"><option value="amazon product prices">Amazon 商品价格</option><option value="amazon product reviews">Amazon 用户评论</option><option value="youtube search videos">YouTube 内容</option><option value="reddit search posts">Reddit 讨论</option><option value="tiktok search videos">TikTok 内容</option><option value="web search">供应商公开搜索</option></select></label>
+          <label class="grow"><span>接口检索</span><input id="discover-query" value="amazon product prices" maxlength="1000" required></label>
+          <button class="button primary" id="discover-button" type="submit"><i data-lucide="search"></i><span>检索接口</span></button>
+        </form>
+        <p id="collection-error" class="form-error" role="alert"></p>
+        <div id="endpoint-results" class="endpoint-results"></div>
+        <div id="endpoint-editor" class="collector-editor" hidden>
+          <h3 id="endpoint-title"></h3>
+          <details><summary>参数 Schema 与计费</summary><pre id="endpoint-schema"></pre></details>
+          <label><span>本次采集参数 JSON</span><textarea id="run-input" rows="6" spellcheck="false">{}</textarea></label>
+          <div class="collector-actions"><button id="prepare-run" class="button secondary" type="button"><i data-lucide="calculator"></i><span>检查报价</span></button></div>
+          <div id="run-quote" hidden>
+            <p id="quote-summary"></p>
+            <label class="check-label"><input id="confirm-charge" type="checkbox"><span>批准本次付费调用；预估不等于硬限额</span></label>
+            <button id="execute-run" class="button primary" type="button" disabled><i data-lucide="play"></i><span>执行一次</span></button>
+          </div>
+        </div>
+        <div class="section-heading compact"><h3>采集任务</h3><button class="icon-button" id="reload-jobs" type="button" title="刷新任务列表" aria-label="刷新任务列表"><i data-lucide="refresh-cw"></i></button></div>
+        <div id="collection-jobs" class="collection-jobs"></div>
+        <div id="job-detail" class="collector-editor" hidden>
+          <h3 id="job-title"></h3><p id="job-billing" class="muted"></p>
+          <details><summary>原始返回结果</summary><pre id="job-output"></pre></details>
+          <button id="download-result" class="button secondary" type="button"><i data-lucide="download"></i><span>下载原始结果</span></button>
+          <form id="mapping-form" hidden>
+            <div class="form-grid mapping-fields">
+              <label><span>结果数组路径</span><input name="items_path" placeholder="/items"></label>
+              <label><span>原文字段路径</span><input name="text_path" value="/text" required></label>
+              <label><span>来源 URL 字段路径</span><input name="url_path" value="/url" required></label>
+              <label><span>记录 ID 路径（可选）</span><input name="source_id_path" placeholder="/id"></label>
+              <label><span>发布日期路径（可选）</span><input name="published_at_path" placeholder="/published_at"></label>
+              <label><span>平台</span><input name="platform" placeholder="amazon / youtube" required></label>
+              <label><span>类型</span><select name="kind"><option value="listing">商品</option><option value="review">评论</option><option value="social">社媒</option><option value="supplier">正式报价</option></select></label>
+              <label><span>来源市场</span><select name="market"><option value="UNKNOWN">未确认</option><option value="SG">新加坡 SG</option><option value="GLOBAL">全球</option><option value="CN">中国 CN</option><option value="US">美国 US</option></select></label>
+              <label><span>来源观察日期</span><input name="observed_at" type="date" required></label>
+            </div>
+            <button class="button primary" type="submit"><i data-lucide="scan-text"></i><span>预览证据映射</span></button>
+          </form>
+        </div>
+      </section>
+
+      <section class="evidence-grid">
         <article class="panel evidence-summary">
           <div class="section-heading compact"><div><p class="eyebrow">MARKET SIGNAL</p><h2>Lazada 快照</h2></div><i data-lucide="chart-no-axes-combined"></i></div>
           <div class="signal-number"><strong id="max-sold">--</strong><span>样本最高累计销量</span></div>
@@ -112,6 +238,21 @@
         <button class="button secondary" id="cancel-dialog" type="button">取消</button>
         <button class="button primary" type="submit"><i data-lucide="save"></i><span>保存并重算</span></button>
       </div>
+    </form>
+  </dialog>
+  <dialog id="import-dialog">
+    <form id="import-form">
+      <div class="dialog-header"><div><p class="eyebrow">EVIDENCE INBOX</p><h2>导入证据</h2></div><button id="close-import" class="icon-button" type="button" aria-label="关闭导入"><i data-lucide="x"></i></button></div>
+      <div class="form-section">
+        <div class="research-toolbar import-toolbar">
+          <label><span>格式</span><select id="import-format"><option value="json">JSON</option><option value="csv">CSV</option></select></label>
+          <label><span>本地文件</span><input id="import-file" type="file" accept=".csv,.json"></label>
+          <button id="download-template" class="icon-button" type="button" title="下载 CSV 表头模板" aria-label="下载 CSV 表头模板"><i data-lucide="file-down"></i></button>
+        </div>
+        <label><span>待审核证据</span><textarea id="import-content" rows="13" spellcheck="false" required></textarea></label>
+      </div>
+      <p class="form-error" id="import-error" role="alert"></p>
+      <div class="dialog-actions"><button class="button primary" type="submit"><i data-lucide="database-backup"></i><span>确认并导入</span></button></div>
     </form>
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>

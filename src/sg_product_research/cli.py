@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 from .model import Candidate, score_candidate
+from .research import EVIDENCE_PATH, evidence_gate, load_evidence, summarize_evidence
 
 
 NUMERIC_FIELDS = {
@@ -41,8 +42,11 @@ def load_candidates(path: Path) -> List[Tuple[Dict[str, str], Candidate]]:
     return rows
 
 
-def write_outputs(rows: List[Tuple[Dict[str, str], Candidate]], output_dir: Path) -> None:
-    ranked = [(raw, candidate, score_candidate(candidate)) for raw, candidate in rows]
+def write_outputs(rows: List[Tuple[Dict[str, str], Candidate]], output_dir: Path, evidence_path: Path = EVIDENCE_PATH) -> None:
+    evidence = load_evidence(evidence_path)
+    ranked = [(raw, candidate, evidence_gate(score_candidate(candidate), summarize_evidence(
+        [record for record in evidence if record["product_id"] == candidate.product_id]
+    ))) for raw, candidate in rows]
     ranked.sort(key=lambda item: item[2].score, reverse=True)
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -86,8 +90,8 @@ def write_outputs(rows: List[Tuple[Dict[str, str], Candidate]], output_dir: Path
         "",
         "## 决策规则",
         "",
-        "- `TEST`: 得分至少 70，可进入 20-50 件小批量测试。",
-        "- `WATCH`: 得分 55-69.99，先补价格、评论、趋势或供应链证据。",
+        "- `TEST`: 得分至少 70 且近期交叉证据齐备，可评估 20-50 件小批量测试，采购前仍需复核。",
+        "- `WATCH`: 得分 55-69.99，或高分但近期交叉证据不足。",
         "- `DROP`: 得分低于 55。",
         "- `BLOCK`: 合规/IP 风险达到 4，或保守贡献毛利率低于 20%。",
         "",
