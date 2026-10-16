@@ -75,6 +75,18 @@ h3 { margin: 0 0 12px; font-size: 13px; }
 .guide-caveat, .guide-boundary { margin: 16px 0 0; padding-left: 12px; border-left: 2px solid #9eb7bd; color: var(--muted); }
 .guide-boundary strong { color: var(--ink); }
 .guide-boundary p { margin: 6px 0; }
+.model-origin { margin: 0 0 18px; }
+.guide-sections > .guide-todo { grid-column: 1 / -1; }
+.todo-snapshot { margin: 0 0 14px; color: var(--muted); line-height: 1.8; }
+.project-todos { list-style: none; margin: 0; padding: 0; }
+.project-todos > li { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+.project-todos > li > div { min-width: 0; }
+.todo-priority { flex: 0 0 30px; padding: 2px 0; text-align: center; border-radius: 3px; background: #fbf0d9; color: #89601c; font-size: 10px; font-weight: 700; }
+.todo-priority.secondary { background: #eff3f5; color: #627276; }
+.project-todos h3 { margin: 0 0 5px; line-height: 1.7; }
+.project-todos h3 small { display: inline-block; margin-left: 10px; font-size: 11px; color: var(--muted); font-weight: 400; }
+.project-todos p { margin: 4px 0 0; color: var(--muted); overflow-wrap: anywhere; }
+.project-todos p strong { color: var(--ink); font-weight: 500; }
 
 .metrics { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
 .metric { position: relative; min-height: 120px; padding: 18px; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
