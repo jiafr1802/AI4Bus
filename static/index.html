@@ -45,12 +45,23 @@
       <section class="home-guide" id="guide" aria-labelledby="guide-title">
         <div class="guide-intro">
           <i data-lucide="book-open-check"></i>
-          <div><h2 id="guide-title">先验证需求与利润，再决定小批量测试</h2><p>目标市场：新加坡。以商品、评论、内容和报价交叉核对方向；当前评分为项目自定启发式，未经经营数据验证，不是销量预测或采购许可。</p></div>
+          <div><h2 id="guide-title">先解释为什么研究这些商品，再讨论如何评分</h2><p>初始数据是 9 个预设研究方向，以及线缆整理方向下的 40 条历史商品样本；不是从全市场筛出的 40 个推荐选品。当前仍缺少完整的候选发现与淘汰记录。</p></div>
         </div>
         <div class="guide-sections">
           <details id="guide-method">
-            <summary><span>底层逻辑</span><span class="guide-summary-note">证据 → 利润 → 风险 → 决策</span></summary>
+            <summary><span>底层逻辑</span><span class="guide-summary-note">为什么入池 → 怎么采样 → 如何评估</span></summary>
             <div class="guide-body">
+              <div id="selection-origin">
+                <h3>第一问：为什么是这些方向和这 40 条样本？</h3>
+                <ol class="guide-steps">
+                  <li><strong>先问客户问题，不先找高分商品</strong><p>目标是检验：新加坡哪类用户有未被现有供给充分解决、愿意付费的问题？我们能否用中国供应链，在可履约、合规且有利润的条件下提供更合适的商品？客群、预算与销售路径仍需明确。</p></li>
+                  <li><strong>9 个方向是初始人工研究池</strong><p>首轮把榜单/截图线索和新加坡场景假设整理成 9 个方向，偏好轻小、通用、易演示的商品。线缆/桌面/手账方向来自报告记录的榜单线索，包饰/风扇/刷头/IP 挂件来自截图线索，防潮盒含气候推断，补充剂来自健康榜单线索。</p><p>这些线索只够提出问题，不能证明当地需求；保健品和 IP 挂件目前是风险阻断对象，留在研究池不等于推荐经营。完整候选全集、统一入池标准与排除记录尚未建立。</p></li>
+                  <li><strong>先选线缆方向，再做定向采样</strong><p>首轮报告给出的理由是线缆保护榜单线索，叠加轻小、通用、易演示的假设。这是优先研究理由，不是最赚钱的证明。2026-09-06 以 cable management 搜索，记录 Amazon 可见前 20 条与 Lazada Best Match 前 20 条，所以是 20 + 20 = 40。</p><p>20 条是初步采样范围，不是算法筛选或统计代表性保证。Amazon 仅 8 条有价格等指标，配送地未复核；Shopee 当时要求登录，没有取得样本。搜索前列也不能当成销量榜或已确认的自然结果。</p></li>
+                  <li><strong>40 条是比较材料，不是采购清单</strong><p>它们都关联线缆整理方向，含线夹、套管、线槽、盒子、托盘等不同规格。价格与已售数用于观察已有供给，不能证明目标套装有市场缺口，也不能把混合中位价直接当目标售价。</p><p>当前代码读取历史 CSV 和预设候选，不会自动遍历全市场发现机会，也没有给 40 条链接逐件核算利润。不同链接还可能来自相同或相近货源，不等于 40 个独立商业机会。</p><a href="https://github.com/jiafr1802/AI4Bus/blob/main/README.md#选品台的底层逻辑" target="_blank" rel="noopener noreferrer">核对 9 个方向的入池线索与原始文件<i data-lucide="arrow-up-right"></i></a></li>
+                </ol>
+                <p class="guide-caveat">应补齐的完整链路：业务约束与客户问题 → 候选发现与入池理由 → 可复现的定向采样 → 同规格比较与反证 → 单位经济和风险 → 小批量验证。当前评分只发生在入池之后，不能弥补上游选题与样本偏差。</p>
+              </div>
+              <h3 class="evaluation-heading">第二问：入池之后，如何评估？</h3>
               <div class="guide-boundary model-origin" id="model-origin"><strong>项目自定的启发式评分，尚未验证预测能力</strong><p>初版由 AI 助手按项目目标设计，借鉴常见的单位经济核算、多指标加权打分和风险否决思路；不是引用某篇论文、Monid 算法或平台推荐模型。具体权重和门槛尚未用真实经营数据校准。</p><p>用途是排列研究优先级，不是预测销量或赚钱概率。分数的小数位是计算精度，不是判断精度；代码测试通过也不代表商业有效性已被验证。</p></div>
               <ol class="guide-steps">
                 <li><strong>保留来源，不把热度当成交</strong><p>商品与评论验证需求，社媒补充使用场景，正式报价校验成本。每条证据保留平台、地区、日期和原文；公开挂牌不能代替供应商正式报价。</p></li>
@@ -70,7 +81,7 @@
             <summary><span>使用流程</span><span class="guide-summary-note">从候选对比到证据复核</span></summary>
             <div class="guide-body">
               <ol class="guide-steps">
-                <li><strong>选一个候选方向</strong><p>先比较参考分、假设利润和风险，再确认“待验证”或“风险阻断”的原因，避免只追最高分。</p><a href="#candidates">查看候选对比<i data-lucide="arrow-right"></i></a></li>
+                <li><strong>先核对方向为什么入池</strong><p>先确认客群、问题、入池线索和还没排除的替代方向，再看参考分、利润假设与风险。候选池不完整时，不把最高分解释为市场最优。</p><a href="#candidates">查看研究方向对比<i data-lucide="arrow-right"></i></a></li>
                 <li><strong>核对原始样本</strong><p>按候选、平台和日期检查商品价格、评价数与来源，区分历史样本和近期信号。优先补齐评论、市场地区或正式报价的缺口。</p><a href="#evidence">查看市场样本<i data-lucide="arrow-right"></i></a></li>
                 <li><strong>补证据，再调整假设</strong><p>本地后台可导入 JSON/CSV，排除无关记录，并人工更新评分与成本。Monid 采集须先配置密钥、检查接口和报价、批准本次调用，再核对返回结果并导入。</p><a class="local-only" href="#collection">进入本地采集<i data-lucide="arrow-right"></i></a></li>
                 <li><strong>小样验证，而非直接放量</strong><p>证据、利润和风险全部通过后，再评估 20–50 件测试。复核样品、供应商规格、运输和权利链；持续记录退款率、广告后毛利与售罄周期。</p></li>
@@ -79,10 +90,11 @@
             </div>
           </details>
           <details id="project-todo" class="guide-todo">
-            <summary><span>当前卡点 / Todo</span><span class="guide-summary-note">4 项 P0 · 2 项 P1 · 核对于 2026-10-16</span></summary>
+            <summary><span>当前卡点 / Todo</span><span class="guide-summary-note">5 项 P0 · 2 项 P1 · 核对于 2026-10-16</span></summary>
             <div class="guide-body">
               <p class="todo-snapshot">本次核对：9 个候选中仅 1 个有原始样本；40 条商品记录均来自 2026-09-06，评论、社媒、正式报价均为 0。Monid 本地密钥未配置，没有采集任务。以下是有日期的人工核对记录，不是实时账号状态。</p>
               <ol class="project-todos">
+                <li><span class="todo-priority">P0</span><div><h3>候选发现与入池依据 <small>待建立 · 协作</small></h3><p>先确定目标客群、使用问题、经营约束和搜索范围，再列出候选全集，记录每个方向为何进入、哪些替代方向被排除；补齐截图/榜单原始证据，避免只研究先选中的一个方向。</p><p><strong>完成标准：</strong>每个候选有可追溯入池理由与反证条件，多个方向按同一地区、关键词、排序与样本范围采样；明确平台排序、广告及缺失数据偏差。API 采集不能代替这一步。</p></div></li>
                 <li><span class="todo-priority">P0</span><div><h3>API 与采集预算 <small>待配置 · 你</small></h3><p>使用 Monid 需要账号、API key、可用额度和工作区预算/单次限额确认。只在本机设置密钥，不写进网页或 GitHub；本地开关开启不代表已核验远程限额。</p><p><strong>完成标准：</strong>成功检查一个可用接口，人工批准一次小样本调用，核对 run ID、结果及实际费用。也可以先用人工 CSV 推进，Monid 不是唯一入口。</p></div></li>
                 <li><span class="todo-priority">P0</span><div><h3>近期新加坡需求证据 <small>待采样 · 协作</small></h3><p>先验证线缆整理套装的 SG 配送、同规格价格、近期评论和内容场景。不能预设聚合 API 一定有 SG 数据；接口受限时改为合规人工采样。</p><p><strong>完成标准：</strong>有可复核的市场、日期、来源与原文，覆盖至少两个需求平台；达到现有最低研究门槛后仍需检查样本偏差。</p></div></li>
                 <li><span class="todo-priority">P0</span><div><h3>真实成本与税务口径 <small>待核实 · 你 / 供应商 / 财税顾问</small></h3><p>确定销售平台、经营主体与履约方式，获取同规格三家报价，补包装、运输、末端履约、平台/支付费用、退款及 GST 处理。</p><p><strong>完成标准：</strong>每项成本有来源，重算悲观/基准/乐观贡献利润；统一除以 1.09 的假设经核实或修订，不把贡献利润当净利润。</p></div></li>
@@ -90,7 +102,7 @@
                 <li><span class="todo-priority secondary">P1</span><div><h3>模型敏感性与真实结果验证 <small>未开始 · 开发 / 运营</small></h3><p>先比较等权和当前权重，对权重浮动后重新归一化；合规审核通过后，再记录小批量订单、广告、退款和净回款。</p><p><strong>完成标准：</strong>有排序稳定性分析及测试前评分与测试后经营结果；积累足够的跨商品、跨周期数据后再校准，不用一单成功证明模型有效。</p></div></li>
                 <li><span class="todo-priority secondary">P1</span><div><h3>持续更新与公开发布 <small>待建立 · 协作</small></h3><p>建立每周采样、证据复核和发布记录；当前 Pages 是静态快照，不会自动刷新外部数据，定时采集尚未启用。</p><p><strong>完成标准：</strong>记录最后采样与发布日，过期或失败可追踪；公开数据脱敏，并有每轮费用核对，不自动扩大采集预算。</p></div></li>
               </ol>
-              <p class="guide-caveat">建议下一步只做一个候选：先确定数据入口与经营路径，再补同规格证据和真实成本。接上 API 只能解决数据获取，不能直接证明需求或盈利。</p>
+              <p class="guide-caveat">下一步先补候选入池与对照抽样规则，再决定哪个方向优先深入；小预算调用只用于验证数据入口。不能因为只有线缆样本，就反推线缆是全市场最好的机会。</p>
             </div>
           </details>
         </div>
@@ -121,7 +133,7 @@
 
       <section class="panel" id="candidates">
         <div class="section-heading">
-          <div><p class="eyebrow">SHORTLIST</p><h2>候选对比</h2></div>
+          <div><p class="eyebrow">RESEARCH DIRECTIONS</p><h2>研究方向对比</h2></div>
           <div class="legend"><span><b class="dot test"></b>可评估试单</span><span><b class="dot watch"></b>待验证</span><span><b class="dot block"></b>暂缓 / 阻断</span></div>
         </div>
         <div class="table-wrap">
@@ -134,7 +146,7 @@
 
       <section class="research-section" id="evidence">
         <div class="section-heading">
-          <div><p class="eyebrow">MARKET EVIDENCE</p><h2>市场样本</h2></div>
+          <div><p class="eyebrow">MARKET EVIDENCE</p><h2>方向内的商品与证据样本</h2></div>
           <button class="button secondary local-only" id="open-import" type="button"><i data-lucide="upload"></i><span>导入证据</span></button>
         </div>
         <div class="research-toolbar">

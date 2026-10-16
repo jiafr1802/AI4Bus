@@ -40,7 +40,7 @@ function renderDashboard(data) {
   document.querySelector("#top-candidate").textContent = top.name_zh;
   document.querySelector("#top-decision").textContent = decisionLabels[top.decision] || top.decision;
   document.querySelector("#top-decision").className = `decision ${top.decision}`;
-  document.querySelector("#overview-summary").textContent = `${data.candidates.length} 个候选 · ${(data.evidence || []).length} 条已收录样本 · 目标市场 新加坡`;
+  document.querySelector("#overview-summary").textContent = `${data.candidates.length} 个研究方向 · ${(data.evidence || []).length} 条已收录证据样本 · 目标市场 新加坡`;
   document.querySelector("#top-score").textContent = Number(top.score).toFixed(2);
   document.querySelector("#median-price").textContent = data.lazada_summary.median_price_sgd == null ? "--" : `S$${Number(data.lazada_summary.median_price_sgd).toFixed(2)}`;
   document.querySelector("#sample-size").textContent = `${data.lazada_summary.sample_size} 条 · ${data.lazada_summary.sampled_at || "无快照"}${data.lazada_summary.stale ? " · 已过期" : ""}`;

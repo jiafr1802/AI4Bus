@@ -34,6 +34,9 @@ class EvidenceTests(unittest.TestCase):
         records = load_evidence(Path(__file__).resolve().parents[1] / "data" / "evidence.json")
         historical = [record for record in records if record.get("collection_id", "").endswith(".csv")]
         self.assertEqual(len(historical), 40)
+        self.assertEqual({record["product_id"] for record in historical}, {"cable-sleeve"})
+        self.assertEqual(sum(record["platform"] == "amazon" for record in historical), 20)
+        self.assertEqual(sum(record["platform"] == "lazada" for record in historical), 20)
         self.assertTrue(all(record["observed_at"] == "2026-09-06" for record in historical))
         self.assertTrue(all(record["market"] == "UNKNOWN" for record in historical if record["platform"] == "amazon"))
 

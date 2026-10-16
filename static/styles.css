@@ -76,6 +76,7 @@ h3 { margin: 0 0 12px; font-size: 13px; }
 .guide-boundary strong { color: var(--ink); }
 .guide-boundary p { margin: 6px 0; }
 .model-origin { margin: 0 0 18px; }
+.evaluation-heading { margin: 22px 0 12px; padding-top: 16px; border-top: 1px solid var(--line); }
 .guide-sections > .guide-todo { grid-column: 1 / -1; }
 .todo-snapshot { margin: 0 0 14px; color: var(--muted); line-height: 1.8; }
 .project-todos { list-style: none; margin: 0; padding: 0; }
