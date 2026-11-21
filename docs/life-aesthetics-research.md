@@ -135,19 +135,23 @@
 
 ### 本机证据索引
 
-下列原始响应与消费记录均位于被 Git 忽略的私有目录；报告保留摘要，不自动发布密钥、账户配置或原始采集文件。
+**以下仅为本机文件清单，不是在线下载链接。** 原始响应与消费记录位于被 Git 忽略的私有目录 `data/raw/kalodata-life-aesthetics/`，未上传至 GitHub；在线阅读以本报告的摘要和分析为准，不自动发布密钥、账户配置或原始采集文件。
 
-- [一级类目结果](../data/raw/kalodata-life-aesthetics/d084cdd3a5c93539.json)
-- [居家日用二级类目](../data/raw/kalodata-life-aesthetics/41010efa1518ba9a.json)
-- [厨房用品二级类目](../data/raw/kalodata-life-aesthetics/cb56daf05c83db70.json)
-- [装饰 20 条样本](../data/raw/kalodata-life-aesthetics/8ac922b7b1ef6fe7.json)
-- [家居收纳 20 条样本](../data/raw/kalodata-life-aesthetics/893c488be29d21f7.json)
-- [咖啡茶用具 20 条样本](../data/raw/kalodata-life-aesthetics/47ab3a27f4e40218.json)
-- [小摆件查询中断记录](../data/raw/kalodata-life-aesthetics/fe5434a197cfcdb7.json)
-- [收纳盒详情中断记录](../data/raw/kalodata-life-aesthetics/9cc6dfc2bc6b6afa.json)
-- [通用滤茶器详情](../data/raw/kalodata-life-aesthetics/10fa71bb39a39759.json)
-- [竹制茶筅详情](../data/raw/kalodata-life-aesthetics/59de776857cddb11.json)
-- [脱敏费用核对](../data/raw/kalodata-life-aesthetics/audit/billing.json)
+文件路径相对于上述本机目录：
+
+| 本机证据 | 文件路径（仅本机可用） |
+|---|---|
+| 一级类目结果 | `d084cdd3a5c93539.json` |
+| 居家日用二级类目 | `41010efa1518ba9a.json` |
+| 厨房用品二级类目 | `cb56daf05c83db70.json` |
+| 装饰 20 条样本 | `8ac922b7b1ef6fe7.json` |
+| 家居收纳 20 条样本 | `893c488be29d21f7.json` |
+| 咖啡茶用具 20 条样本 | `47ab3a27f4e40218.json` |
+| 小摆件查询中断记录 | `fe5434a197cfcdb7.json` |
+| 收纳盒详情中断记录 | `9cc6dfc2bc6b6afa.json` |
+| 通用滤茶器详情 | `10fa71bb39a39759.json` |
+| 竹制茶筅详情 | `59de776857cddb11.json` |
+| 脱敏费用核对 | `audit/billing.json` |
 
 两个中断请求的响应内容不可用；不能声称获得了额外 20 条小摆件数据或收纳盒详情。原始记录中的单次实际费用字段仍为空，最终扣费核对以单独的消费审计记录为准。
 
