@@ -207,6 +207,8 @@ API时间戳按文档的epoch秒换算为UTC+8。Simplee评论并非本次30天�
 
 ## 7. 搜索平台价格核验：Lazada SG
 
+2026-11-26续查见[固定SKU与供应询价记录](sg-storage-sku-followup.md)。下列11月21日观察作为历史保留，不自动代表续查日价格。
+
 2026-11-21实际浏览的[Makeup Organizer列表](https://www.lazada.sg/tag/makeup-organizer/)按Best Match显示24,189个结果。这个宽泛结果数混有旅行包、置物架、配件等，不能当作同规格卖家数、有效竞争者数或市场规模。下面记录的是页面可见观察，不是Google缓存摘要。
 
 | 页面 | 可见价格 S$ | 可见“sold” | 核验深度 |
